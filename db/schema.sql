@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS 3d_printing_db;
+CREATE DATABASE 3d_printing_db;
