@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Printer } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+/*
 router.post('/', withAuth, async (req, res) => {
     try {
       const newPrinter = await Printer.create({
@@ -15,3 +16,6 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
+  */
+
+  module.exports = router
