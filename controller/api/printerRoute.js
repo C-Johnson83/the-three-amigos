@@ -10,7 +10,7 @@ router.post('/', withAuth, async (req, res) => {
       });
   
       res.status(200).json(newPrinter);
-      console.log(newPrinter);
+      
     } catch (err) {
       res.status(400).json(err);
     }
