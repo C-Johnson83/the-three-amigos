@@ -1,15 +1,15 @@
 [
     {
-      "FilamentName": "PLA",
-      "Manufacturer": "Generic",
-      "Color": "Red",
-      "Diameter": 1.75
+      "name": "PLA",
+      "manufacturer": "Generic",
+      "color": "Red",
+      "diameter": 1.75
     },
     {
-      "FilamentName": "ABS",
-      "Manufacturer": "Generic",
-      "Color": "Black",
-      "Diameter": 3.0
+      "name": "ABS",
+      "manufacturer": "Generic",
+      "color": "Black",
+      "diameter": 3.0
     }
   ]
   

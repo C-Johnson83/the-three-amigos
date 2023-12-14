@@ -5,22 +5,23 @@ class Filament extends Model { }
 
 Filament.init(
     {
-        FilamentID: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+            allowNull: false,
         },
-        FilamentName: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Manufacturer: {
+        manufacturer: {
             type: DataTypes.STRING,
         },
-        Color: {
+        color: {
             type: DataTypes.STRING,
         },
-        Diameter: {
+        diameter: {
             type: DataTypes.FLOAT,
         },
     },

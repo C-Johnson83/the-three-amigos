@@ -5,7 +5,7 @@ class Material extends Model { }
 
 Material.init(
     {
-        MaterialID: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
