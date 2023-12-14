@@ -1,8 +1,8 @@
-const User = require('./user');
-const Printer = require('./printer');
-const Filament = require('./filament');
-const Material = require('./material');
-const Settings = require('./settings');
+const User = require('./User');
+const Printer = require('./Printer');
+const Filament = require('./Filament');
+const Material = require('./Material');
+const Settings = require('./Settings');
 // const PrintersOwned = require('./printersOwned');
 
 

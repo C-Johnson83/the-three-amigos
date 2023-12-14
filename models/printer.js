@@ -5,19 +5,19 @@ class Printer extends Model { }
 
 Printer.init(
     {
-        PrinterID: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        PrinterName: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Manufacturer: {
+        manufacturer: {
             type: DataTypes.STRING,
         },
-        Model: {
+        model: {
             type: DataTypes.STRING,
         },
     },

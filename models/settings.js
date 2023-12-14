@@ -7,27 +7,27 @@ class Settings extends Model { }
 
 Settings.init(
     {
-        SettingsID: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        PrintTemperature: {
+        printTemperature: {
             type: DataTypes.INTEGER,
         },
-        InitialLayerTemperature: {
+        initialLayerTemperature: {
             type: DataTypes.INTEGER,
         },
-        BuildPlateTemperature: {
+        buildPlateTemperature: {
             type: DataTypes.INTEGER,
         },
-        RetractionDistance: {
+        retractionDistance: {
             type: DataTypes.INTEGER,
         },
-        RetractionSpeed: {
+        retractionSpeed: {
             type: DataTypes.INTEGER,
         },
-        MaxRetractionCount: {
+        maxRetractionCount: {
             type: DataTypes.INTEGER,
         },
     },

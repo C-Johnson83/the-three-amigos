@@ -1,13 +1,13 @@
 [
     {
-      "PrinterName": "Ender 3",
-      "Manufacturer": "Creality",
-      "Model": "Ender 3"
+      "name": "Ender 3",
+      "manufacturer": "Creality",
+      "model": "Ender 3"
     },
     {
-      "PrinterName": "Prusa i3 MK3",
-      "Manufacturer": "Prusa",
-      "Model": "i3 MK3"
+      "name": "Prusa i3 MK3",
+      "manufacturer": "Prusa",
+      "model": "i3 MK3"
     }
   ]
   
