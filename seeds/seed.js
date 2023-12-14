@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { Filament,
     Material,
     Printer,
-    // PrintersOwned,
+    PrintersOwned,
     Settings,
     User } = require('../models');
 
@@ -11,7 +11,7 @@ const printerData = require('./printerData.json');
 const filamentData = require('./filamentData.json');
 const materialData = require('./materialData.json');
 const settingsData = require('./settingsData.json');
-// const printersOwnedData = require('./printersOwnedData.json');
+const printersOwnedData = require('./printersOwnedData.json');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -26,7 +26,7 @@ const seedDatabase = async () => {
     const settings = await Settings.bulkCreate(settingsData);
   
     // Assuming 'printerOwnedData' has a structure like the 'printersOwned.json' example provided earlier
-    // const printersOwned = await PrintersOwned.bulkCreate(printersOwnedData);
+    const printersOwned = await PrintersOwned.bulkCreate(printersOwnedData);
   
     process.exit(0);
   };

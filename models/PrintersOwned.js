@@ -3,9 +3,9 @@ const sequelize = require('../config/connection');
 const Printer = require('./Printer');
 const User = require('./User');
 
-class PrinterOwned extends Model {}
+class PrintersOwned extends Model {}
 
-PrinterOwned.init(
+PrintersOwned.init(
   {
     printerId: {
       type: DataTypes.INTEGER,
@@ -15,7 +15,7 @@ PrinterOwned.init(
       },
     },
     userId: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: User, 
@@ -28,8 +28,8 @@ PrinterOwned.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'printerowned',
+    modelName: 'printersOwned',
   }
 );
 
-module.exports = PrinterOwned;
+module.exports = PrintersOwned;
