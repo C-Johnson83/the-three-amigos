@@ -1,0 +1,11 @@
+[
+    {
+      "PrinterID": 1,
+      "UserID": "john_doe"
+    },
+    {
+      "PrinterID": 2,
+      "UserID": "jane_smith"
+    }
+  ]
+  

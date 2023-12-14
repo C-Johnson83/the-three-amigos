@@ -40,4 +40,4 @@ Settings.init(
     }
 );
 
-module.exports = settings;
+module.exports = Settings;
