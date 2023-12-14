@@ -1,34 +1,35 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Printer = require('./printer');
+const User = require('./user');
 
-class PrinterOwned extends Model { }
+class PrinterOwned extends Model {}
 
 PrinterOwned.init(
-    {
-        PrinterID: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'Project',
-                key: 'id',
-            },
-        },
-        UserID: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'User',
-                key: 'id',
-            }
+  {
+    PrinterID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: Printer, 
+        key: 'PrinterID',
+      },
     },
-},
-{
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'printerOwned',
-    }
-
+    UserID: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: User, 
+        key: 'UserID',
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'printerOwned',
+  }
 );
 
-module.exports = printerOwned;
+module.exports = PrinterOwned;

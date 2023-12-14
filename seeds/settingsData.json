@@ -1,0 +1,19 @@
+[
+    {
+      "PrintTemperature": 200,
+      "InitialLayerTemperature": 60,
+      "BuildPlateTemperature": 60,
+      "RetractionDistance": 2,
+      "RetractionSpeed": 30,
+      "MaxRetractionCount": 5
+    },
+    {
+      "PrintTemperature": 220,
+      "InitialLayerTemperature": 65,
+      "BuildPlateTemperature": 70,
+      "RetractionDistance": 3,
+      "RetractionSpeed": 40,
+      "MaxRetractionCount": 7
+    }
+  ]
+  
