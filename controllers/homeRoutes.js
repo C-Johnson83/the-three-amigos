@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   console.log("main route")
   try {
     console.log('1')
-    // Get all projects and JOIN with user data
+    
     const printerData = await Printer.findAll({
 
           attributes: ['name']

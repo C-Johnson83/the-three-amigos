@@ -2,12 +2,10 @@ const router = require('express').Router();
 const { Filament, Settings } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Create a new filament and associate with printer settings
 router.post('/', withAuth, async (req, res) => {
   try {
     const { name, manufacturer, color, diameter, settings } = req.body;
 
-    // Create filament
     const newFilament = await Filament.create({
       name,
       manufacturer,
@@ -16,7 +14,6 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    // Associate filament with printer settings
     if (settings && settings.length > 0) {
       await newFilament.setSettings(settings);
     }
@@ -27,12 +24,11 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// Get all filaments for the logged-in user
 router.get('/', withAuth, async (req, res) => {
   try {
     const filaments = await Filament.findAll({
       where: { user_id: req.session.user_id },
-      include: Settings, // Include associated settings
+      include: Settings,
     });
 
     res.status(200).json(filaments);
@@ -41,7 +37,6 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-// Update a filament for the logged-in user
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedFilament = await Filament.update(req.body, {
@@ -62,7 +57,6 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-// Delete a filament for the logged-in user
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const deletedFilament = await Filament.destroy({

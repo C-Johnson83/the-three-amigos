@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Printer, Filament, Settings } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Add a printer to the user's profile
 router.post('/add-printer', withAuth, async (req, res) => {
   try {
     const newPrinter = await Printer.create({
@@ -16,12 +15,10 @@ router.post('/add-printer', withAuth, async (req, res) => {
   }
 });
 
-// Add a filament to the user's profile and associate with printer settings
 router.post('/add-filament', withAuth, async (req, res) => {
   try {
     const { printerId, name, manufacturer, color, diameter, settings } = req.body;
 
-    // Create filament
     const newFilament = await Filament.create({
       name,
       manufacturer,
@@ -30,9 +27,17 @@ router.post('/add-filament', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    // Associate filament with printer settings
     if (settings && settings.length > 0) {
       await newFilament.setSettings(settings);
+
+      const associatedPrinters = await Printer.findAll({
+        where: { user_id: req.session.user_id },
+      });
+
+      for (const printer of associatedPrinters) {
+        await printer.addFilament(newFilament);
+        await printer.setSettings(settings);
+      }
     }
 
     res.status(200).json(newFilament);

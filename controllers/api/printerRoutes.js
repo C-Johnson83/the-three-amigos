@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Printer } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Create a new printer for the logged-in user
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPrinter = await Printer.create({
@@ -16,7 +15,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// Get all printers for the logged-in user
 router.get('/', withAuth, async (req, res) => {
   try {
     const printers = await Printer.findAll({
@@ -29,7 +27,6 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-// Update a printer for the logged-in user
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedPrinter = await Printer.update(req.body, {
@@ -50,7 +47,6 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-// Delete a printer for the logged-in user
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const deletedPrinter = await Printer.destroy({

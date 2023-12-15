@@ -2,12 +2,14 @@
     {
       "name": "Ender 3",
       "manufacturer": "Creality",
-      "model": "Ender 3"
+      "model": "Ender 3",
+      "userId": "1"
     },
     {
       "name": "Prusa i3 MK3",
       "manufacturer": "Prusa",
-      "model": "i3 MK3"
+      "model": "i3 MK3",
+      "userId": "2"
     }
   ]
   
