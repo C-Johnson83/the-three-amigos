@@ -4,17 +4,17 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
+  console.log("main route")
   try {
+    console.log('1')
     // Get all projects and JOIN with user data
     const printerData = await Printer.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+
+          attributes: ['name']
+
     });
 
+    console.log(printerData);
     // Serialize data so the template can read it
     const printers = printerData.map((printer) => printer.get({ printer: true }));
 
@@ -24,6 +24,7 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log('error')
     res.status(500).json(err);
   }
 });
