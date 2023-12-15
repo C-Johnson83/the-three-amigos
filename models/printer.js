@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
 
 class Printer extends Model { }
 
@@ -20,6 +21,14 @@ Printer.init(
         model: {
             type: DataTypes.STRING,
         },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: User,
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
