@@ -11,7 +11,7 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newPrinter);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json("Filament route line 14 \n"+ err.message);
   }
 });
 
@@ -23,7 +23,7 @@ router.get('/', withAuth, async (req, res) => {
 
     res.status(200).json(printers);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Filament route line 26 \n"+ err.message);
   }
 });
 
@@ -43,7 +43,7 @@ router.put('/:id', withAuth, async (req, res) => {
 
     res.status(200).json({ message: 'Printer updated successfully' });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Filament route line 46 \n"+ err.message);
   }
 });
 
@@ -63,7 +63,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
     res.status(200).json({ message: 'Printer deleted successfully' });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Filament route line 66 \n"+ err.message);
   }
 });
 

@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
     });
   } catch (err) {
     console.log('error')
-    res.status(500).json(err);
+    res.status(500).json("Home route line 28 \n"+ err.message);
   }
 });
 
@@ -44,7 +44,7 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Home route line 47 \n"+ err.message);
   }
 });
 
