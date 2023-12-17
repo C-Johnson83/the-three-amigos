@@ -34,7 +34,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Printer }],
     });
 
     const user = userData.get({ plain: true });
@@ -44,7 +44,7 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
-    res.status(500).json("Home route line 47 \n"+ err.message);
+    res.status(500).json("Home route line 47 " + err.message);
   }
 });
 
