@@ -11,7 +11,7 @@ router.post('/add-printer', withAuth, async (req, res) => {
 
     res.status(200).json(newPrinter);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json("Profile route line 14 \n"+ err.message);
   }
 });
 
@@ -20,6 +20,7 @@ router.post('/add-filament', withAuth, async (req, res) => {
     const { printerId, name, manufacturer, color, diameter, settings } = req.body;
 
     const newFilament = await Filament.create({
+      printerId,
       name,
       manufacturer,
       color,
@@ -42,7 +43,7 @@ router.post('/add-filament', withAuth, async (req, res) => {
 
     res.status(200).json(newFilament);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json("Profile route line 46 \n"+ err.message);
   }
 });
 

@@ -20,7 +20,7 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newFilament);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json("Filament route line 23 \n"+ err.message);
   }
 });
 
@@ -33,7 +33,7 @@ router.get('/', withAuth, async (req, res) => {
 
     res.status(200).json(filaments);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Filament route line 36 \n"+ err.message);
   }
 });
 
@@ -53,7 +53,7 @@ router.put('/:id', withAuth, async (req, res) => {
 
     res.status(200).json({ message: 'Filament updated successfully' });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Filament route line 56 \n"+ err.message);
   }
 });
 
@@ -73,7 +73,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
     res.status(200).json({ message: 'Filament deleted successfully' });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Filament route line 76 \n"+ err.message);
   }
 });
 
