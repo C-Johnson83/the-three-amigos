@@ -1,7 +1,7 @@
 const User = require('./User');
 const Printer = require('./Printer');
-const Filament = require('./Filament');
 const Material = require('./Material');
+const Filament = require('./Filament');
 const Settings = require('./Settings');
 
 User.hasMany(Printer, { foreignKey: 'userId' });

@@ -1,32 +1,32 @@
 [
     {
-      "name": "PLA",
+      "materialId": 4,
       "manufacturer": "Generic",
       "color": "Red",
       "diameter": 1.75
     },
     {
-      "name": "ABS",
+      "materialId": 1,
       "manufacturer": "Generic",
       "color": "Black",
       "diameter": 3.0
     },
     {
-      "name": "Aluminum Alloy",
+      "materialId": 4,
       "manufacturer": "MetalTech",
-      "color": "Silver",
+      "color": "Aluminum Alloy - Silver",
       "thickness": 2.0
     },
     {
-      "name": "Polycarbonate",
+      "materialId": 5,
       "manufacturer": "PlastiTech",
       "color": "Transparent",
       "thickness": 1.5
     },
     {
-      "name": "Steel Composite",
+      "materialId": 4,
       "manufacturer": "MetalWorks",
-      "color": "Gray",
+      "color": "Steel Composite - Gray",
       "thickness": 3.0
     }
   ]
