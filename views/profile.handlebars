@@ -51,7 +51,7 @@
   <row>
     <div class="col-4"></div>
       <p>Your printers:</p>
-      {{each printers as |printer|}}
+      {{#each printers as |printer|}}
       <div>
         {{printer.name}} - {{printer.manufacturer}} - {{printer.model}}
       </div>
@@ -59,8 +59,8 @@
     </div>
     <div class="col-8">
       <p>Your filaments:</p>
-      {{each filaments as |filament|}}
-      <div>
+      <!-- {{#each filaments as |filament|}} -->
+       <div>
 
       </div>
       {{/each}}

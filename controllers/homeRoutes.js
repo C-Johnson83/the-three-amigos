@@ -41,9 +41,9 @@ router.get('/profile', withAuth, async (req, res) => {
       }
     });
 
-    const filamentData = await Filament.findAll({
-      where: userId
-    })
+    //const filamentData = await Filament.findAll({
+    //  where: userId
+    //})
 
     const user = userData.get({ plain: true });
     const printers = printerData.map((printer) => printer.get( {printer: true} ));
