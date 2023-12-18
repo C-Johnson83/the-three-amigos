@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Material = require('./Material')
 
 class Filament extends Model { }
 
@@ -11,12 +12,17 @@ Filament.init(
             autoIncrement: true,
             allowNull: false,
         },
-        name: {
-            type: DataTypes.STRING,
+        materialId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: Material,
+                key: 'id'
+            }
         },
         manufacturer: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
         color: {
             type: DataTypes.STRING,

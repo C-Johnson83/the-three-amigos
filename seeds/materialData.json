@@ -1,8 +1,23 @@
 [
     {
-      "materialType": "Metal"
+      "materialType": "ABS"
     },
     {
-      "materialType": "Plastic"
+      "materialType": "Nylon"
+    },
+    {
+      "materialType": "PETG"
+    },
+    {
+      "materialType": "PLA"
+    },
+    {
+      "materialType": "Polycarbonate"
+    },
+    {
+      "materialType": "PVA"
+    },
+    {
+      "materialType": "TPE"
     }
   ]
