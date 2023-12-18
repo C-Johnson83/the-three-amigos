@@ -14,6 +14,30 @@
       "retractionDistance": 3,
       "retractionSpeed": 40,
       "maxRetractionCount": 7
+    },
+    {
+      "printTemperature": 210,
+      "initialLayerTemperature": 62,
+      "buildPlateTemperature": 65,
+      "retractionDistance": 2.5,
+      "retractionSpeed": 35,
+      "maxRetractionCount": 6
+    },
+    {
+      "printTemperature": 230,
+      "initialLayerTemperature": 70,
+      "buildPlateTemperature": 75,
+      "retractionDistance": 3.5,
+      "retractionSpeed": 45,
+      "maxRetractionCount": 8
+    },
+    {
+      "printTemperature": 205,
+      "initialLayerTemperature": 58,
+      "buildPlateTemperature": 62,
+      "retractionDistance": 2.2,
+      "retractionSpeed": 32,
+      "maxRetractionCount": 4
     }
   ]
   

@@ -10,6 +10,24 @@
       "manufacturer": "Prusa",
       "model": "i3 MK3",
       "userId": "2"
+    },
+    {
+      "name": "Anycubic i3 Mega",
+      "manufacturer": "Anycubic",
+      "model": "i3 Mega",
+      "userId": "3"
+    },
+    {
+      "name": "CR-10",
+      "manufacturer": "Creality",
+      "model": "CR-10",
+      "userId": "4"
+    },
+    {
+      "name": "LulzBot TAZ 6",
+      "manufacturer": "LulzBot",
+      "model": "TAZ 6",
+      "userId": "5"
     }
   ]
   

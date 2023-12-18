@@ -11,7 +11,7 @@ router.post('/add-printer', withAuth, async (req, res) => {
 
     res.status(200).json(newPrinter);
   } catch (err) {
-    res.status(400).json("Profile route line 14 \n"+ err.message);
+    res.status(400).json("Profile route line 14: " + err.message);
   }
 });
 
@@ -43,7 +43,7 @@ router.post('/add-filament', withAuth, async (req, res) => {
 
     res.status(200).json(newFilament);
   } catch (err) {
-    res.status(400).json("Profile route line 46 \n"+ err.message);
+    res.status(400).json("Profile route line 46: "+ err.message);
   }
 });
 
