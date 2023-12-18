@@ -48,8 +48,8 @@
 
 <div>
   <h1 style="text-transform: capitalize;">Welcome, {{username}}!</h1>
-  <row>
-    <div class="col-4"></div>
+  <div class="row">
+    <div class="col-4">
       <p>Your printers:</p>
       {{#each printers as |printer|}}
       <div>
@@ -59,11 +59,11 @@
     </div>
     <div class="col-8">
       <p>Your filaments:</p>
-      <!-- {{#each filaments as |filament|}} -->
-       <div>
-
+      {{#each filaments as |filament|}} 
+      <div>
+        {{filament.manufacturer}} - {{filament.color}} - {{filament.diameter}}
       </div>
       {{/each}}
     </div>
-  </row>
+  </div>
 <script src="./js/profile.js"></script>

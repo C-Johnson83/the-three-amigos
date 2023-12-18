@@ -41,16 +41,23 @@ router.get('/profile', withAuth, async (req, res) => {
       }
     });
 
-    //const filamentData = await Filament.findAll({
-    //  where: userId
-    //})
+    const filamentData = await Filament.findAll({
+      where: {
+        userId: req.session.user_id
+      }
+    })
+    console.log(req.session.user_id)
+    console.log('filament data')
+    console.log(filamentData)
 
     const user = userData.get({ plain: true });
     const printers = printerData.map((printer) => printer.get( {printer: true} ));
+    const filaments = filamentData.map((filament) => filament.get( {filament: true }));
 
     res.render('profile', {
       ...user,
       printers, 
+      filaments,
       logged_in: true
     });
   } catch (err) {

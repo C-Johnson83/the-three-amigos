@@ -17,21 +17,21 @@
       "materialId": 4,
       "manufacturer": "MetalTech",
       "color": "Aluminum Alloy - Silver",
-      "thickness": 2.0,
+      "diameter": 2.0,
       "userId": 1
     },
     {
       "materialId": 5,
       "manufacturer": "PlastiTech",
       "color": "Transparent",
-      "thickness": 1.5,
+      "diameter": 1.5,
       "userId": 1
     },
     {
       "materialId": 4,
       "manufacturer": "MetalWorks",
       "color": "Steel Composite - Gray",
-      "thickness": 3.0,
+      "diameter": 3.0,
       "userId": 1
     }
   ]
