@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const Material = require('./Material')
+const User = require('./User')
 
 class Filament extends Model { }
 
@@ -30,6 +31,14 @@ Filament.init(
         diameter: {
             type: DataTypes.FLOAT,
         },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: User,
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,

@@ -3,31 +3,36 @@
       "materialId": 4,
       "manufacturer": "Generic",
       "color": "Red",
-      "diameter": 1.75
+      "diameter": 1.75,
+      "userId": 1
     },
     {
       "materialId": 1,
       "manufacturer": "Generic",
       "color": "Black",
-      "diameter": 3.0
+      "diameter": 3.0,
+      "userId": 1
     },
     {
       "materialId": 4,
       "manufacturer": "MetalTech",
       "color": "Aluminum Alloy - Silver",
-      "thickness": 2.0
+      "thickness": 2.0,
+      "userId": 1
     },
     {
       "materialId": 5,
       "manufacturer": "PlastiTech",
       "color": "Transparent",
-      "thickness": 1.5
+      "thickness": 1.5,
+      "userId": 1
     },
     {
       "materialId": 4,
       "manufacturer": "MetalWorks",
       "color": "Steel Composite - Gray",
-      "thickness": 3.0
+      "thickness": 3.0,
+      "userId": 1
     }
   ]
   

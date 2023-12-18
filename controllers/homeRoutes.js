@@ -6,7 +6,6 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   console.log("main route")
   try {
-    console.log('1')
     
     const printerData = await Printer.findAll({
 
@@ -41,6 +40,10 @@ router.get('/profile', withAuth, async (req, res) => {
         userId: req.session.user_id
       }
     });
+
+    //const filamentData = await Filament.findAll({
+    //  where: userId
+    //})
 
     const user = userData.get({ plain: true });
     const printers = printerData.map((printer) => printer.get( {printer: true} ));

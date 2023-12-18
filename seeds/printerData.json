@@ -28,6 +28,13 @@
       "manufacturer": "LulzBot",
       "model": "TAZ 6",
       "userId": "5"
+    },
+    {
+      "name": "Prusa i3 MK3",
+      "manufacturer": "Prusa",
+      "model": "i3 MK3",
+      "userId": "1"
     }
+
   ]
   

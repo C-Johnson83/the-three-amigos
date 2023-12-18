@@ -5,7 +5,10 @@
       "buildPlateTemperature": 60,
       "retractionDistance": 2,
       "retractionSpeed": 30,
-      "maxRetractionCount": 5
+      "maxRetractionCount": 5,
+      "filamentId": 2,
+      "printerId": 1,
+      "userId": 1 
     },
     {
       "printTemperature": 220,
@@ -13,7 +16,10 @@
       "buildPlateTemperature": 70,
       "retractionDistance": 3,
       "retractionSpeed": 40,
-      "maxRetractionCount": 7
+      "maxRetractionCount": 7,
+      "filamentId": 1,
+      "printerId": 1,
+      "userId": 1
     },
     {
       "printTemperature": 210,
@@ -21,7 +27,10 @@
       "buildPlateTemperature": 65,
       "retractionDistance": 2.5,
       "retractionSpeed": 35,
-      "maxRetractionCount": 6
+      "maxRetractionCount": 6,
+      "filamentId": 2,
+      "printerId": 6,
+      "userId": 1
     },
     {
       "printTemperature": 230,
@@ -29,7 +38,10 @@
       "buildPlateTemperature": 75,
       "retractionDistance": 3.5,
       "retractionSpeed": 45,
-      "maxRetractionCount": 8
+      "maxRetractionCount": 8,
+      "filamentId": 1,
+      "printerId": 6,
+      "userId": 1
     },
     {
       "printTemperature": 205,
@@ -37,7 +49,10 @@
       "buildPlateTemperature": 62,
       "retractionDistance": 2.2,
       "retractionSpeed": 32,
-      "maxRetractionCount": 4
+      "maxRetractionCount": 4,
+      "filamentId": 3,
+      "printerId": 1,
+      "userId": 1 
     }
   ]
   
