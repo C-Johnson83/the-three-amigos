@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json("User route line 15 \n"+ err.message);
+    res.status(400).json("User route line 15: "+ err.message);
   }
 });
 
@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    res.status(400).json("User route line 46 \n"+ err.message);
+    res.status(400).json("User route line 46: "+ err.message);
   }
 });
 

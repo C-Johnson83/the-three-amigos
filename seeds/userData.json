@@ -8,5 +8,20 @@
       "username": "jane_smith",
       "email": "jane@example.com",
       "password": "hashed_password_here"
+    },
+    {
+      "username": "alice_wonder",
+      "email": "alice@example.com",
+      "password": "hashed_password_here"
+    },
+    {
+      "username": "bob_miller",
+      "email": "bob@example.com",
+      "password": "hashed_password_here"
+    },
+    {
+      "username": "eve_jones",
+      "email": "eve@example.com",
+      "password": "hashed_password_here"
     }
   ]

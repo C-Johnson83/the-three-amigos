@@ -10,6 +10,24 @@
       "manufacturer": "Generic",
       "color": "Black",
       "diameter": 3.0
+    },
+    {
+      "name": "Aluminum Alloy",
+      "manufacturer": "MetalTech",
+      "color": "Silver",
+      "thickness": 2.0
+    },
+    {
+      "name": "Polycarbonate",
+      "manufacturer": "PlastiTech",
+      "color": "Transparent",
+      "thickness": 1.5
+    },
+    {
+      "name": "Steel Composite",
+      "manufacturer": "MetalWorks",
+      "color": "Gray",
+      "thickness": 3.0
     }
   ]
   
