@@ -34,13 +34,20 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Printer }],
+    });
+
+    const printerData = await Printer.findAll({
+      where: {
+        userId: req.session.user_id
+      }
     });
 
     const user = userData.get({ plain: true });
+    const printers = printerData.map((printer) => printer.get( {printer: true} ));
 
     res.render('profile', {
       ...user,
+      printers, 
       logged_in: true
     });
   } catch (err) {

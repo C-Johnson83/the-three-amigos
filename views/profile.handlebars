@@ -1,4 +1,4 @@
-
+<!--
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
@@ -43,23 +43,27 @@
     </div>
 
 </div> 
-
+ -->
 {{!-- //////////////////////////////////////////////////////////////////////////////////////////////// --}}
 
 <div>
   <h1 style="text-transform: capitalize;">Welcome, {{username}}!</h1>
-  
-  <p>Select your 3D printer:</p>
-  
-  <form action="/add-printer" method="post">
-    <select name="printer">
-      {{#each Printer}}
-        <option value="{{name}}">{{name}} ({{manufacturer}} {{model}})</option>
+  <row>
+    <div class="col-4"></div>
+      <p>Your printers:</p>
+      {{each printers as |printer|}}
+      <div>
+        {{printer.name}} - {{printer.manufacturer}} - {{printer.model}}
+      </div>
       {{/each}}
-    </select>
-    <button type="submit">Save Printer</button>
-  </form>
+    </div>
+    <div class="col-8">
+      <p>Your filaments:</p>
+      {{each filaments as |filament|}}
+      <div>
 
-  <p>Your current printer: {{selectedPrinter}}</p>
-  </div>
+      </div>
+      {{/each}}
+    </div>
+  </row>
 <script src="./js/profile.js"></script>
