@@ -56,14 +56,22 @@
         {{printer.name}} - {{printer.manufacturer}} - {{printer.model}}
       </div>
       {{/each}}
+      <button id="btnAddPrinter">Add Printer</button>
     </div>
-    <div class="col-8">
+    <div class="col-6">
       <p>Your filaments:</p>
       {{#each filaments as |filament|}} 
       <div>
         {{filament.manufacturer}} - {{filament.color}} - {{filament.diameter}}
       </div>
       {{/each}}
+      <button id="btnAddFilament">Add Filament</button>
+    </div>
+    <div class="col-2">
+      <button id="btnSettings"></button>
     </div>
   </div>
-<script src="./js/profile.js"></script>
+
+{{#if logged_in}}
+<script src="/js/profile.js"></script> 
+{{/if}}
