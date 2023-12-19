@@ -57,24 +57,24 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
-  try {
-    const deletedFilament = await Filament.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+// router.delete('/:id', withAuth, async (req, res) => {
+//   try {
+//     const deletedFilament = await Filament.destroy({
+//       where: {
+//         id: req.params.id,
+//         user_id: req.session.user_id,
+//       },
+//     });
 
-    if (!deletedFilament) {
-      res.status(404).json({ message: 'Filament not found or not authorized' });
-      return;
-    }
+//     if (!deletedFilament) {
+//       res.status(404).json({ message: 'Filament not found or not authorized' });
+//       return;
+//     }
 
-    res.status(200).json({ message: 'Filament deleted successfully' });
-  } catch (err) {
-    res.status(500).json("Filament route line 76: "+ err.message);
-  }
-});
+//     res.status(200).json({ message: 'Filament deleted successfully' });
+//   } catch (err) {
+//     res.status(500).json("Filament route line 76: "+ err.message);
+//   }
+// });
 
 module.exports = router;
