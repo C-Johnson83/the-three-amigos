@@ -7,7 +7,7 @@ const addFilament = () => {
 }
 
 const settings = () => {
-  document.location.replace('api/settings')
+  document.location.replace('/api/settings')
 }
 
 document.querySelector('#btnAddPrinter').addEventListener('click', addPrinter);
