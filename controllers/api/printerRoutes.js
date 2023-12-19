@@ -2,68 +2,30 @@ const router = require('express').Router();
 const { Printer } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Route to render the "Add Printer" form
+router.get('/', withAuth, (req, res) => {
+  try {
+    res.render('add-printer'); 
+  } catch (err) {
+    res.status(500).json( err.message + 'Internal server error' );
+  }
+});
+
+// Route to handle the form submission and add a new printer
 router.post('/', withAuth, async (req, res) => {
   try {
+    const { name, manufacturer } = req.body;
+
+    // Create a new printer
     const newPrinter = await Printer.create({
-      ...req.body,
+      name,
+      manufacturer,
       user_id: req.session.user_id,
     });
 
     res.status(200).json(newPrinter);
   } catch (err) {
-    res.status(400).json("Filament route line 14: "+ err.message);
-  }
-});
-
-router.get('/', withAuth, async (req, res) => {
-  try {
-    const printers = await Printer.findAll({
-      where: { user_id: req.session.user_id },
-    });
-
-    res.status(200).json(printers);
-  } catch (err) {
-    res.status(500).json("Filament route line 26: "+ err.message);
-  }
-});
-
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const updatedPrinter = await Printer.update(req.body, {
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-
-    if (updatedPrinter[0] === 0) {
-      res.status(404).json({ message: 'Printer not found or not authorized' });
-      return;
-    }
-
-    res.status(200).json({ message: 'Printer updated successfully' });
-  } catch (err) {
-    res.status(500).json("Filament route line 46: "+ err.message);
-  }
-});
-
-router.delete('/:id', withAuth, async (req, res) => {
-  try {
-    const deletedPrinter = await Printer.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-
-    if (!deletedPrinter) {
-      res.status(404).json({ message: 'Printer not found or not authorized' });
-      return;
-    }
-
-    res.status(200).json({ message: 'Printer deleted successfully' });
-  } catch (err) {
-    res.status(500).json("Filament route line 66: "+ err.message);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 

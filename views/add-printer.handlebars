@@ -1,0 +1,18 @@
+  <div class="container mt-5">
+    <h2 class="mb-4">Add a New Printer</h2>
+    <form class="add-printer-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" class="form-control" id="manufacturer" name="manufacturer" required>
+      </div>
+      <!-- Add other printer fields as needed -->
+      <button type="submit" class="btn btn-primary">Add Printer</button>
+    </form>
+  </div>
+  {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+  {{/if}}
