@@ -1,11 +1,6 @@
-{{#each settings as | setting |}}
+{{#each settingArr as | setting |}}
     <li>
-        {{#if setting.printer}}
-             Printer Name: {{setting.printer.name}}<br>
-        {{else}}
-            Printer Name: N/A<br>
-        {{/if}}
-       Printer Name: {{setting.printer.name}}<br>
+       Printer Name: {{setting.printerName}}<br>
        Print Temperature: {{setting.printTemperature}}<br>
        Layer Temperature: {{setting.initialLayerTemperature}}<br>
        Build Temperature: {{setting.buildPlateTemperature}}<br>
