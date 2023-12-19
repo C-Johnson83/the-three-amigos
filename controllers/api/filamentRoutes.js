@@ -1,80 +1,34 @@
 const router = require('express').Router();
-const { Filament, Settings } = require('../../models');
+const { Filament } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Route to render the "Add Filament" form
+router.get('/', withAuth, (req, res) => {
+  try {
+    res.render('add-filament'); 
+  } catch (err) {
+    res.status(500).json( err.message + 'Internal server error' );
+  }
+});
+
+// Route to handle the form submission and add a new printer
 router.post('/', withAuth, async (req, res) => {
   try {
-    const { name, manufacturer, color, diameter, settings } = req.body;
+    const { materialId, manufacturer, color, diameter, } = req.body;
 
+    // Create a new filament
     const newFilament = await Filament.create({
-      name,
+      materialId,
       manufacturer,
       color,
       diameter,
       user_id: req.session.user_id,
     });
 
-    if (settings && settings.length > 0) {
-      await newFilament.setSettings(settings);
-    }
-
     res.status(200).json(newFilament);
   } catch (err) {
-    res.status(400).json("Filament route line 23: "+ err.message);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-router.get('/', withAuth, async (req, res) => {
-  try {
-    const filaments = await Filament.findAll({
-      where: { user_id: req.session.user_id },
-      include: Settings,
-    });
-
-    res.status(200).json(filaments);
-  } catch (err) {
-    res.status(500).json("Filament route line 36: "+ err.message);
-  }
-});
-
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const updatedFilament = await Filament.update(req.body, {
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-
-    if (updatedFilament[0] === 0) {
-      res.status(404).json({ message: 'Filament not found or not authorized' });
-      return;
-    }
-
-    res.status(200).json({ message: 'Filament updated successfully' });
-  } catch (err) {
-    res.status(500).json("Filament route line 56: "+ err.message);
-  }
-});
-
-// router.delete('/:id', withAuth, async (req, res) => {
-//   try {
-//     const deletedFilament = await Filament.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
-
-//     if (!deletedFilament) {
-//       res.status(404).json({ message: 'Filament not found or not authorized' });
-//       return;
-//     }
-
-//     res.status(200).json({ message: 'Filament deleted successfully' });
-//   } catch (err) {
-//     res.status(500).json("Filament route line 76: "+ err.message);
-//   }
-// });
 
 module.exports = router;
