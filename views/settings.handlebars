@@ -1,14 +1,38 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Manufacturer</th>
+            <th scope="col">Color</th>
+            <th scope="col">Material</th>
+            <th scope="col">Diameter</th>
+            <th scope="col">Printer Name</th>
+            <th scope="col">Print Temperature</th>
+            <th scope="col">Layer Temperature</th>
+            <th scope="col">Build Plate Temperature</th>
+            <th scope="col">Retraction Distance</th>
+            <th scope="col">Retraction Speed</th>
+            <th scope="col">Max Retraction Count</th>      
+
+        </tr>
+    </thead>
+    <tbody>
 {{#each settingArr as | setting |}}
-    <li>
-       Printer Name: {{setting.printerName}}<br>
-       Print Temperature: {{setting.printTemperature}}<br>
-       Layer Temperature: {{setting.initialLayerTemperature}}<br>
-       Build Temperature: {{setting.buildPlateTemperature}}<br>
-       Retraction Distance: {{setting.retractionDistance}}<br>
-       Retraction Speed: {{setting.retractionSpeed}}<br>
-       Max Retraction Count: {{setting.maxRetractionCount}}<br>       
-    </li>
+        <tr>
+            <td>{{setting.filamentManufacturer}}</td>
+            <td>{{setting.filamentColor}}</td>
+            <td>{{setting.materialType}}</td>
+            <td>{{setting.filamentDiameter}}</td>
+            <td>{{setting.printerName}}</td>
+            <td>{{setting.printTemperature}}</td>
+            <td>{{setting.initialLayerTemperature}}</td>
+            <td>{{setting.buildPlateTemperature}}</td>
+            <td>{{setting.retractionDistance}}</td>
+            <td>{{setting.retractionSpeed}}</td>
+            <td>{{setting.maxRetractionCount}}</td>
+        </tr>
 {{/each}}
+    </tbody>
+</table>
 {{#if logged_in}}
     <script src="/js/logout.js"></script>
 {{/if}}
