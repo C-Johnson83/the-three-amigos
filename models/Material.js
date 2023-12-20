@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Material extends Model { }
-
+// create material model
 Material.init(
     {
         id: {
