@@ -5,7 +5,9 @@ const withAuth = require('../../utils/auth');
 // Route to render the "Add Filament" form
 router.get('/', withAuth, (req, res) => {
   try {
-    res.render('add-filament'); 
+    res.render('add-filament', {
+      logged_in: req.session.logged_in 
+    }); 
   } catch (err) {
     res.status(500).json( err.message + 'Internal server error' );
   }

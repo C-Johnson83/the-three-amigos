@@ -5,7 +5,9 @@ const withAuth = require('../../utils/auth');
 // Route to render the "Add Printer" form
 router.get('/', withAuth, (req, res) => {
   try {
-    res.render('add-printer'); 
+    res.render('add-printer', {
+      logged_in: req.session.logged_in 
+    }); 
   } catch (err) {
     res.status(500).json( err.message + 'Internal server error' );
   }
