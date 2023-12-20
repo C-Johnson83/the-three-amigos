@@ -18,15 +18,16 @@ router.post('/', withAuth, async (req, res) => {
 
     // Create a new filament
     const newFilament = await Filament.create({
-      materialId,
-      manufacturer,
-      color,
-      diameter,
-      user_id: req.session.user_id,
+      materialId: materialId,
+      manufacturer: manufacturer,
+      color: color,
+      diameter: diameter,
+      userId: req.session.user_id,
     });
 
     res.status(200).json(newFilament);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
