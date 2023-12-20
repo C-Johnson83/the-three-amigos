@@ -35,7 +35,10 @@ router.get('/', withAuth, async (req, res) => {
       }
     })
 
-    res.render('settings', { settingArr });
+    res.render('settings', { 
+      settingArr,
+      logged_in: req.session.logged_in 
+    });
     
   } catch (error) {
     console.error('Error fetching settings:', error);
