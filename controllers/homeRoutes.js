@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-  console.log("main route")
+  // console.log("main route")
   try {
     
     const printerData = await Printer.findAll({
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 
     });
 
-    console.log(printerData);
+    // console.log(printerData);
     // Serialize data so the template can read it
     const printers = printerData.map((printer) => printer.get({ printer: true }));
 
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in 
     });
   } catch (err) {
-    console.log('error')
+    // console.log('error')
     res.status(500).json("Home route line 28: "+ err.message);
   }
 });
@@ -46,9 +46,9 @@ router.get('/profile', withAuth, async (req, res) => {
         userId: req.session.user_id
       }
     })
-    console.log(req.session.user_id)
-    console.log('filament data')
-    console.log(filamentData)
+    // console.log(req.session.user_id)
+    // console.log('filament data')
+    // console.log(filamentData)
 
     const user = userData.get({ plain: true });
     const printers = printerData.map((printer) => printer.get( {printer: true} ));

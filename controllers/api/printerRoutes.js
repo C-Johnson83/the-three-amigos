@@ -13,6 +13,7 @@ router.get('/', withAuth, (req, res) => {
 
 // Route to handle the form submission and add a new printer
 router.post('/', withAuth, async (req, res) => {
+  console.log("I am working", req.body)
   try {
     const { name, manufacturer } = req.body;
 
@@ -20,6 +21,7 @@ router.post('/', withAuth, async (req, res) => {
     const newPrinter = await Printer.create({
       name,
       manufacturer,
+      model,
       user_id: req.session.user_id,
     });
 
