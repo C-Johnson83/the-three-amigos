@@ -13,20 +13,20 @@ router.get('/', withAuth, (req, res) => {
 
 // Route to handle the form submission and add a new printer
 router.post('/', withAuth, async (req, res) => {
-  console.log("I am working", req.body)
   try {
-    const { name, manufacturer } = req.body;
-
+    const { p_name, manufacturer, model } = req.body;
+    console.log(req.body.p_name, req.body.manufacturer, req.body.model, req.session.user_id)
     // Create a new printer
     const newPrinter = await Printer.create({
-      name,
-      manufacturer,
-      model,
-      user_id: req.session.user_id,
+      name: p_name,
+      manufacturer: manufacturer,
+      model: model,
+      userId: req.session.user_id,
     });
 
     res.status(200).json(newPrinter);
   } catch (err) {
+    console.error(err)
     res.status(500).json({ error: 'Internal server error' });
   }
 });

@@ -1,22 +1,19 @@
 const newPrinterHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#printer-name').value.trim();
+    const p_name = document.querySelector('#printer-name').value.trim();
     const manufacturer = document.querySelector('#printer-manufacturer').value.trim();
     const model = document.querySelector('#printer-model').value.trim();
-   console.log(name, manufacturer, model)
   
-    if (name && manufacturer && model) {
-      console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
-      const response = await fetch('/add-printer', {
+    if (p_name && manufacturer && model) {
+      const response = await fetch('/api/add-printer', {
         
         method: 'POST',
-        body: JSON.stringify({ name, manufacturer, model }),
+        body: JSON.stringify({ p_name, manufacturer, model }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        console.log(response);
         document.location.replace('/profile');
       } else {
         alert(response.statusText);
