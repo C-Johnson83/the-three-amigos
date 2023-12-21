@@ -39,7 +39,7 @@ router.get('/', withAuth, async (req, res) => {
       try {
         const { filamentId, printerId, printTemperature, initialLayerTemperature, buildPlateTemperature, retractionDistance, retractionSpeed, maxRetractionCount } = req.body;
 
-        
+        console.log(req.body);
     
         // Create a new settings
         const newSettings = await Settings.create({

@@ -10,36 +10,52 @@ console.log("hello")
     const printerId = document.querySelector('#printerId').value.trim();
     const filamentId = document.querySelector('#filamentId').value.trim();
     
-    if (
-        printTemperature &&
-        initialLayerTemperature &&
-        buildPlateTemperature &&
-        retractionDistance &&
-        retractionSpeed &&
-        maxRetractionCount &&
-        printerId &&
-        filamentId
-    ) {
-            const response = await fetch('/api/settings', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    printerId,
-                    filamentId,
-                    printTemperature,
-                    initialLayerTemperature,
-                    buildPlateTemperature,
-                    retractionDistance,
-                    retractionSpeed,
-                    maxRetractionCount
-                }),
-            });
-            if (response.ok) {
-                document.location.replace('/api/settings');
-            } else {
-                alert(response.statusText);
+    
+        if (
+            printTemperature &&
+            initialLayerTemperature &&
+            buildPlateTemperature &&
+            retractionDistance &&
+            retractionSpeed &&
+            maxRetractionCount &&
+            printerId &&
+            filamentId
+        ) {
+            try {
+                const response = await fetch('/api/settings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        printerId,
+                        filamentId,
+                        printTemperature,
+                        initialLayerTemperature,
+                        buildPlateTemperature,
+                        retractionDistance,
+                        retractionSpeed,
+                        maxRetractionCount
+                    }),
+                });
+    
+                if (response.ok) {
+                    // Parse the JSON response
+                    const responseData = await response.json();
+    
+                    // Redirect to a different page (e.g., profile page)
+                    window.location.href = '/profile';
+                } else {
+                    // Handle non-ok responses
+                    alert(`Error: ${response.statusText}`);
+                }
+            } catch (error) {
+                // Handle fetch errors
+                console.error('Error submitting form:', error);
+                alert('An error occurred while submitting the form.');
             }
-        }}
-        document.querySelector('#addSettings').addEventListener('click', newSettingsHandler);
+        }
+    };
+    
+    document.querySelector('#addSettings').addEventListener('click', newSettingsHandler);
+    
