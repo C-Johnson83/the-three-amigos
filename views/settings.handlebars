@@ -35,43 +35,60 @@
     </tbody>
 </table>
 <div>
-    <h2 class="mb-4">Add a New Filament</h2>
+    <h2 class="mb-4">Add a New Setting Combination</h2>
     <form action="/api/settings" method="POST">
+        <div class="col">
+            <div class="row">
+                <div class="col-7">
+                    <label for="filamentId">Filament:&nbsp;</label>
+                    <select id="filamentId" name="filamentId">
+                        {{#each filaments as | filament | }}
+                            <option value="{{filament.id}}">{{filament.manufacturer}}-{{filament.color}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="col-5">
+                    <label for="printerId">Printer:&nbsp;</label>
+                    <select id="printerId" name="printerId">
+                        {{#each printers as | printer | }}
+                            <option value="{{printer.id}}">{{printer.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label for="print-temperature">Print Temperature:&nbsp;</label>
+                    <input type="text" id="print-temperature" name="print-temperature" required>
+                </div>
+                <div class="col-4">
+                    <label for="initial-layer-temperature">&nbsp;&nbsp;Initial Layer Temperature:&nbsp;</label>
+                    <input type="text" id="initial-layer-temperature" name="initial-layer-temperature" required>
+                </div>
+                <div class="col-4">
+                    <label for="build-plate-temperature">&nbsp;&nbsp;Build Plate Temperature:&nbsp;</label>
+                    <input type="text" id="build-plate-temperature" name="build-plate-temperature" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label for="retraction-distance">&nbsp;&nbsp;Retraction Distance:&nbsp;</label>
+                    <input type="text" id="retraction-distance" name="retraction-distance" required>
+                </div>
+                <div class="col-4">
+                    <label for="retraction-speed">&nbsp;&nbsp;Retraction Speed:&nbsp;</label>
+                    <input type="text" id="retraction-speed" name="retraction-speed" required>
+                </div>
+                <div class="col-4">
+                    <label for="max-retraction-count">&nbsp;&nbsp;Max Retraction Count:&nbsp;</label>
+                    <input type="text" id="max-retraction-count" name="max-retraction-count" required>
+                </div>
+            </div>
 
-        <label for="filamentId">Filament:&nbsp;</label>
-        <select id="filamentId" name="filamentId">
-            {{#each filaments as | filament | }}
-                <option value="{{filament.id}}">{{filament.manufacturer}}-{{filament.color}}</option>
-            {{/each}}
-        </select>
-
-        <label for="printerId">Printer:&nbsp;</label>
-        <select id="printerId" name="printerId">
-            {{#each printers as | printer | }}
-                <option value="{{printer.id}}">{{printer.name}}</option>
-            {{/each}}
-        </select>
-
-        <label for="print-temperature">Print Temperature:&nbsp;</label>
-        <input type="text" id="print-temperature" name="print-temperature"required placeholder="Enter print temperature">
-
-        <label for="initial-layer-temperature">&nbsp;&nbsp;Initial Layer Temperature:&nbsp;</label>
-        <input type="text" id="initial-layer-temperature" name="initial-layer-temperature"required placeholder="Enter initial layer temperature">
-
-        <label for="build-plate-temperature">&nbsp;&nbsp;Build Plate Temperature:&nbsp;</label>
-        <input type="text" id="build-plate-temperature" name="build-plate-temperature"required placeholder="Enter build plate temperature">
-
-        <label for="retraction-distance">&nbsp;&nbsp;Retraction Distance:&nbsp;</label>
-        <input type="text" id="retraction-distance" name="retraction-distance"required placeholder="Enter retraction distance">
-
-        <label for="retraction-speed">&nbsp;&nbsp;Retraction Speed:&nbsp;</label>
-        <input type="text" id="retraction-speed" name="retraction-speed"required placeholder="Enter retraction speed">
-
-        <label for="max-retraction-count">&nbsp;&nbsp;Max Retraction Count:&nbsp;</label>
-        <input type="text" id="max-retraction-count" name="max-retraction-count"required placeholder="Enter max retraction count">
-
-        <button type="submit" id="addSettings">Add Settings</button>
+            <button type="submit" id="addSettings">Add Settings</button>
+        </div>
     </form>
 </div>
 
-  <script src="/js/setting.js"></script>
+
+<script type="text/javascript" src="/js/setting.js"></script>

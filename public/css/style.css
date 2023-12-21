@@ -76,3 +76,11 @@ h1 a {
     align-items: center;
 
 }
+#print-temperature, #initial-layer-temperature, #build-plate-temperature {
+    width: 100px;
+}
+
+#retraction-distance, #retraction-speed, #max-retraction-count {
+    width: 50px;
+}
+
