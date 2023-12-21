@@ -13,9 +13,9 @@ console.log("hello")
     var filamentId = document.querySelector('#filamentId').value.trim();
     console.log(buildPlateTemperature)
 
-        if (
-            isInt(printTemperature) &&
-            isInt(initialLayerTemperature) &&
+        if 
+            printTemperature &&
+            initialLayerTemperature &&
             buildPlateTemperature &&
             retractionDistance &&
             retractionSpeed &&
