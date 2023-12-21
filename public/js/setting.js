@@ -2,7 +2,7 @@
 
 const newSettingsHandler = async (event) => {
     event.preventDefault();
-console.log("hello")
+    console.log("hello")
     var printTemperature = document.querySelector('#print-temperature').value.trim();
     var initialLayerTemperature = document.querySelector('#initial-layer-temperature').value.trim();
     var buildPlateTemperature = document.querySelector('#build-plate-temperature').value.trim();
@@ -13,7 +13,7 @@ console.log("hello")
     var filamentId = document.querySelector('#filamentId').value.trim();
     console.log(buildPlateTemperature)
 
-        if 
+        if (
             printTemperature &&
             initialLayerTemperature &&
             buildPlateTemperature &&
