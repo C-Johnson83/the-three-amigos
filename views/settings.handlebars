@@ -1,3 +1,4 @@
+<!-- test -->
 <table class="table">
     <thead>
         <tr>
@@ -36,11 +37,20 @@
 <div>
     <h2 class="mb-4">Add a New Filament</h2>
     <form action="/api/settings" method="POST">
-        <label for="filamentId">Filament ID:&nbsp;</label>
-        <input type="text" id="filamentId" name="filamentId"required placeholder="Enter filament ID">
-        
-        <label for="printerId">Printer ID:&nbsp;</label>
-        <input type="text" id="printerId" name="printerId" required placeholder="Enter printer ID">
+
+        <label for="filamentId">Filament:&nbsp;</label>
+        <select id="filamentId" name="filamentId">
+            {{#each filaments as | filament | }}
+                <option value="{{filament.id}}">{{filament.manufacturer}}-{{filament.color}}</option>
+            {{/each}}
+        </select>
+
+        <label for="printerId">Printer:&nbsp;</label>
+        <select id="printerId" name="printerId">
+            {{#each printers as | printer | }}
+                <option value="{{printer.id}}">{{printer.name}}</option>
+            {{/each}}
+        </select>
 
         <label for="print-temperature">Print Temperature:&nbsp;</label>
         <input type="text" id="print-temperature" name="print-temperature"required placeholder="Enter print temperature">
@@ -63,3 +73,5 @@
         <button type="submit" id="addSettings">Add Settings</button>
     </form>
 </div>
+
+  <script src="/js/setting.js"></script>

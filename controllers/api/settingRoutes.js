@@ -15,6 +15,9 @@ router.get('/', withAuth, async (req, res) => {
       include:[Printer, Filament]
     });
 
+    console.log(req.session.printers)
+    console.log(req.session.filaments)
+
     const setting = allSettings.map((setting) => setting.get( {setting: true }));
 
     const settingArr = setting.map((setting) => {
@@ -35,40 +38,43 @@ router.get('/', withAuth, async (req, res) => {
       }
     })
 
-    router.post('/', withAuth, async (req, res) => {
-      try {
-        const { filamentId, printerId, printTemperature, initialLayerTemperature, buildPlateTemperature, retractionDistance, retractionSpeed, maxRetractionCount } = req.body;
-
-        console.log(req.body);
-    
-        // Create a new settings
-        const newSettings = await Settings.create({
-          filamentId: filamentId,
-          printerId: printerId,
-          printTemperature: printTemperature,
-          initialLayerTemperature: initialLayerTemperature,
-          buildPlateTemperature: buildPlateTemperature,
-          retractionDistance: retractionDistance,
-          retractionSpeed: retractionSpeed,
-          maxRetractionCount: maxRetractionCount,
-          userId: req.session.user_id,
-        });
-    
-        res.status(200).json(newSettings);
-      } catch (err) {
-        
-        res.status(500).json({ error: 'hellooooo ' + err.message });
-      }
-    });
-
     res.render('settings', { 
       settingArr,
+      printers: req.session.printers,
+      filaments: req.session.filaments,
       logged_in: req.session.logged_in 
     });
     
   } catch (error) {
     console.error('Error fetching settings:', error);
     res.status(500).send('Internal Server Error');
+  }
+});
+
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const { filamentId, printerId, printTemperature, initialLayerTemperature, buildPlateTemperature, retractionDistance, retractionSpeed, maxRetractionCount } = req.body;
+    console.log('ADD SETTING')
+    console.log(req.body);
+    console.log(printTemperature)
+    console.log(initialLayerTemperature)
+    // Create a new settings
+    const newSettings = await Settings.create({
+      filamentId: filamentId,
+      printerId: printerId,
+      printTemperature: printTemperature,
+      initialLayerTemperature: initialLayerTemperature,
+      buildPlateTemperature: buildPlateTemperature,
+      retractionDistance: retractionDistance,
+      retractionSpeed: retractionSpeed,
+      maxRetractionCount: maxRetractionCount,
+      userId: req.session.user_id,
+    });
+
+    res.status(200).json(newSettings);
+  } catch (err) {
+    
+    res.status(500).json({ error: 'hellooooo ' + err.message });
   }
 });
 
