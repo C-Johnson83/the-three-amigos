@@ -37,28 +37,28 @@
     <h2 class="mb-4">Add a New Filament</h2>
     <form action="/api/settings" method="POST">
         <label for="filamentId">Filament ID:&nbsp;</label>
-        <input type="text" id="filamentId" required placeholder="Enter filament ID">
+        <input type="text" id="filamentId" name="filamentId"required placeholder="Enter filament ID">
         
         <label for="printerId">Printer ID:&nbsp;</label>
-        <input type="text" id="printerId" required placeholder="Enter printer ID">
+        <input type="text" id="printerId" name="printerId" required placeholder="Enter printer ID">
 
         <label for="print-temperature">Print Temperature:&nbsp;</label>
-        <input type="text" id="print-temperature" required placeholder="Enter print temperature">
+        <input type="text" id="print-temperature" name="print-temperature"required placeholder="Enter print temperature">
 
         <label for="initial-layer-temperature">&nbsp;&nbsp;Initial Layer Temperature:&nbsp;</label>
-        <input type="text" id="initial-layer-temperature" required placeholder="Enter initial layer temperature">
+        <input type="text" id="initial-layer-temperature" name="initial-layer-temperature"required placeholder="Enter initial layer temperature">
 
         <label for="build-plate-temperature">&nbsp;&nbsp;Build Plate Temperature:&nbsp;</label>
-        <input type="text" id="build-plate-temperature" required placeholder="Enter build plate temperature">
+        <input type="text" id="build-plate-temperature" name="build-plate-temperature"required placeholder="Enter build plate temperature">
 
         <label for="retraction-distance">&nbsp;&nbsp;Retraction Distance:&nbsp;</label>
-        <input type="text" id="retraction-distance" required placeholder="Enter retraction distance">
+        <input type="text" id="retraction-distance" name="retraction-distance"required placeholder="Enter retraction distance">
 
         <label for="retraction-speed">&nbsp;&nbsp;Retraction Speed:&nbsp;</label>
-        <input type="text" id="retraction-speed" required placeholder="Enter retraction speed">
+        <input type="text" id="retraction-speed" name="retraction-speed"required placeholder="Enter retraction speed">
 
         <label for="max-retraction-count">&nbsp;&nbsp;Max Retraction Count:&nbsp;</label>
-        <input type="text" id="max-retraction-count" required placeholder="Enter max retraction count">
+        <input type="text" id="max-retraction-count" name="max-retraction-count"required placeholder="Enter max retraction count">
 
         <button type="submit" id="addSettings">Add Settings</button>
     </form>
