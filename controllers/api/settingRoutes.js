@@ -35,6 +35,32 @@ router.get('/', withAuth, async (req, res) => {
       }
     })
 
+    router.post('/', withAuth, async (req, res) => {
+      try {
+        const { filamentId, printerId, printTemperature, initialLayerTemperature, buildPlateTemperature, retractionDistance, retractionSpeed, maxRetractionCount } = req.body;
+
+        
+    
+        // Create a new settings
+        const newSettings = await Settings.create({
+          filamentId: filamentId,
+          printerId: printerId,
+          printTemperature: printTemperature,
+          initialLayerTemperature: initialLayerTemperature,
+          buildPlateTemperature: buildPlateTemperature,
+          retractionDistance: retractionDistance,
+          retractionSpeed: retractionSpeed,
+          maxRetractionCount: maxRetractionCount,
+          userId: req.session.user_id,
+        });
+    
+        res.status(200).json(newSettings);
+      } catch (err) {
+        
+        res.status(500).json({ error: 'hellooooo ' + err.message });
+      }
+    });
+
     res.render('settings', { 
       settingArr,
       logged_in: req.session.logged_in 
