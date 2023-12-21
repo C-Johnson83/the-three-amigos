@@ -1,3 +1,5 @@
+
+
 const newSettingsHandler = async (event) => {
     event.preventDefault();
 console.log("hello")
@@ -10,10 +12,10 @@ console.log("hello")
     var printerId = document.querySelector('#printerId').value.trim();
     var filamentId = document.querySelector('#filamentId').value.trim();
     console.log(buildPlateTemperature)
-    
+
         if (
-            printTemperature &&
-            initialLayerTemperature &&
+            isInt(printTemperature) &&
+            isInt(initialLayerTemperature) &&
             buildPlateTemperature &&
             retractionDistance &&
             retractionSpeed &&
