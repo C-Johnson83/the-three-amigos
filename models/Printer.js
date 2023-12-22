@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const User = require('./User');
 
 class Printer extends Model { }
-
+// camment
 Printer.init(
     {
         id: {
