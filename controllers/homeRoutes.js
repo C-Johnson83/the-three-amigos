@@ -53,13 +53,13 @@ router.get('/profile', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
     const printers = printerData.map((printer) => printer.get( {printer: true} ));
     const filaments = filamentData.map((filament) => filament.get( {filament: true }));
-
+    /*
     req.session.save(() => {
       req.session.printers = printers;
       req.session.filaments = filaments;
 
     });
-
+    */
     res.render('profile', {
       ...user,
       printers, 
