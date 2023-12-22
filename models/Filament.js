@@ -5,6 +5,7 @@ const User = require('./User')
 
 class Filament extends Model { }
 
+// create filament model
 Filament.init(
     {
         id: {
